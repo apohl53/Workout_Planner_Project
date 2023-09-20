@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,7 +8,31 @@
     <title>Workout Planner</title>
     <link rel="stylesheet" href="./css/stylesheet.css" />
   </head>
+
   <body>
-    <script src="./js/script.js"></script>
+
+
+    <button onclick="openModal()">Open Modal</button>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span onclick="closeModal()" style="float: right;">&times;</span>
+        <p>Enter your choice: <input type="text" id="userInput"></p>
+        <button onclick="saveUserChoice()">Save</button>
+      </div>
+    </div>
+
+
+    <li>upperbody</li>
+    <li>core</li>
+    <li>lowerbody</li>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="./js/exercise.js"></script>
   </body>
+
 </html>
