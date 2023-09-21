@@ -12,21 +12,30 @@
   <body>
 
 
-    <button onclick="openModal()">Open Modal</button>
+    <button id="getStartedBTN">Get Started</button>
 
     <div id="myModal" class="modal">
       <div class="modal-content">
-        <span onclick="closeModal()" style="float: right;">&times;</span>
-        <p>Enter your choice: <input type="text" id="userInput"></p>
-        <button onclick="saveUserChoice()">Save</button>
+        <span id="closeX" style="float: right  ; cursor:pointer">&times;</span>
+        <p>Choose a body section:</p>
+
+
+        <input name="part" type="radio" id="lowerBody" value="lowerBody" class="bodyPart">Lower
+        Body<br>
+        <input name="part" type="radio" id="core" value="core" class="bodyPart">Core<br>
+        <input name="part" type="radio" id="upperBody" value="upperBody" class="bodyPart">Upper
+        Body<br>
+
+        <button class="showMeBTN">Show me the Workout!</button>
       </div>
     </div>
 
+    <section id="firstSection">
 
-    <li>upperbody</li>
-    <li>core</li>
-    <li>lowerbody</li>
+    </section>
+    <section id="secondSection">
 
+    </section>
 
 
 

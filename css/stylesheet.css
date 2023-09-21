@@ -20,3 +20,11 @@
   border: 1px solid #888;
   width: 80%;
 }
+
+body button {
+  padding: 50px;
+  background-color: rgb(64, 8, 177);
+  color: white;
+  border-radius: 20px;
+  font-size: 50px;
+}
