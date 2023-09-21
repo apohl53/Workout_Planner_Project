@@ -9,14 +9,13 @@
   <link rel="stylesheet" href="./css/stylesheet.css" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-​
-​
-<body>
-  <header>
+  
+<body class= "mx-20 bg-blue-500 text-yellow-400">
+  <header class="px-5 bg-slate-600 border border-yellow-400 flex justify-between">
     <img src="/Users/pabloestrada/Downloads/Workout.png" alt="logo" class="logo">
-    <h1>Welcome to The Workout Planner!</h1>
+    <h1 class="font-bold text-2xl">Welcome to The Workout Planner!</h1>
     <nav>
-      <ul>
+      <ul class="text-right inline-flex">
         <li><a href="#workout">Workout</a></li>
         <li><a href="#schedule">Schedule</a></li>
         <li><a href="#about">About</a></li>
@@ -24,8 +23,7 @@
     </nav>
   </header>
   <main class="stuff"></main>
-​
-​
+  
   <div class="container">
     <table>
       <thead>
@@ -57,10 +55,20 @@
         </trow>
       </thead>
     </table>
+
+   <table>
+    <ul>
+      <li id="date"> Date </li>
+      <li id="workout-type"> Workout Type </li>
+      <li id="Instructions"> Instructions </li>
+    </ul>
+   </table>
+  
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="./js/questions.js"></script>
     <script src="./js/script.js"></script>
 </body>
-​
+  
 </html>
+
