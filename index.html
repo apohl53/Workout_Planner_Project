@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,8 +10,15 @@
   </head>
 
   <body class="mx-20 bg-blue-500 text-yellow-400">
-    <header class="px-2 py-1 bg-slate-600 border border-yellow-400 flex justify-between items-center">
-      <img src="./assets/images/Workout-2.png" alt="logo" class="logo object-contain h-16 w-16" />
+    <!-- nav bar -->
+    <header
+      class="px-2 py-1 bg-slate-600 border border-yellow-400 flex justify-between items-center"
+    >
+      <img
+        src="./assets/images/Workout-2.png"
+        alt="logo"
+        class="logo object-contain h-16 w-16"
+      />
       <nav class="text-sm px-4">
         <ul class="text-right space-x-3 hidden md:flex">
           <li>
@@ -31,17 +37,29 @@
           </li>
           <li>
             <a
-              href="#about"
+              href="./about-page.html"
               class="py-.5 px-2 border border-yellow-400 rounded shadow hover:bg-yellow-400 hover:text-black"
               >About</a
             >
           </li>
         </ul>
 
+        <!-- mobile menu -->
         <div class="md:hidden flex">
           <button class="mobile-menu-button">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
             </svg>
           </button>
         </div>
@@ -51,46 +69,62 @@
           <a href="" class="block py-2 px-4 text-xs">Schedule</a>
           <a href="" class="block py-2 px-4 text-xs">About</a>
         </div>
-
       </nav>
     </header>
     <section>
       <h1 class="font-bold text-2xl">Workout Planner</h1>
       <div>
-        <h1 class="mb-4 font-semibold leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+        <h1
+          class="mb-4 font-semibold leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
+        >
           Quote of the day!
         </h1>
-        <p class="mb-8 text-lg font-normal lg:text-xl sm:px-16 xl:px-48 italic quotes"></p>
+        <p
+          class="text-yellow-300 italic font-light text-2xl mb-8 sm:px-16 xl:px-48 quotes border border-yellow-400 py-3 bg-cover"
+          style="
+            text-shadow: 1px 0 0 black, 0 -1px 0 black, 0 1px 0 black,
+              -1px 0 0 black;
+            background-image: url('./assets/images/karsten-winegeart-0Wra5YYVQJE-unsplash-grayscale.jpg');
+          "
+        ></p>
       </div>
     </section>
     <main></main>
 
-    <div class="container">
+    <div
+      class="container p-5 flex-col bg-slate-600 border border-yellow-400 py-4 justify-center"
+    >
+      <div class="flex justify-center">
+        <button id="getStartedBTN" class="ml-4 py-.5 px-2 border">
+          Get Workout!
+        </button>
+      </div>
+
+      <div>
+        <div id="secondSection" class="container flex bg-slate-600 mg-2"></div>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="container flex bg-slate-600 border border-yellow-400">
       <table>
         <thead>
           <trow>
             <th colspan="2">
-              <h1>
-                <img src="./assets/images/humanbody v2.jpg" />
-              </h1>
               <tr>
-                <td class="right">
-                  <h3>Upper body</h3>
+                <td class="upperBody">
+                  <h3>Previous Upper body</h3>
                 </td>
               </tr>
               <tr>
-                <td class="right">
-                  <h3>Core</h3>
+                <td class="core">
+                  <h3>Previous Core</h3>
                 </td>
               </tr>
               <tr>
-                <td class="right">
-                  <h3>Lower Body</h3>
-                </td>
-              </tr>
-              <tr>
-                <td class="right">
-                  <h3>Submit</h3>
+                <td class="lowerBody">
+                  <h3>Previous Lower Body</h3>
                 </td>
               </tr>
             </th>
@@ -99,54 +133,43 @@
       </table>
     </div>
 
-
-    </div>
-
-
-    <div class="container">
-      <!--Name of exercise + difficulty-->
-    </div>
-
-    <div class="container">
-      <th class="quotes">Instructions</th>
-      <!--Exercise instructions-->
-    </div>
-
-    <table>
-      <ul>
-        <li id="date">Date</li>
-        <li id="workout-type">Workout Type</li>
-        <li id="Instructions">Instructions</li>
-      </ul>
-    </table>
-    <button id="getStartedBTN">Get Started</button>
-
-
     <div id="myModal" class="modal">
       <div class="modal-content">
-        <span id="closeX" style="float: right  ; cursor:pointer">&times;</span>
+        <span id="closeX" style="float: right; cursor: pointer">&times;</span>
         <p>Choose a body section:</p>
 
-
-        <input name="part" type="radio" id="lowerBody" value="lowerBody" class="bodyPart">Lower
-        Body<br>
-        <input name="part" type="radio" id="core" value="core" class="bodyPart">Core<br>
-        <input name="part" type="radio" id="upperBody" value="upperBody" class="bodyPart">Upper
-        Body<br>
+        <input
+          name="part"
+          type="radio"
+          id="lowerBody"
+          value="lowerBody"
+          class="bodyPart"
+        />Lower Body<br />
+        <input
+          name="part"
+          type="radio"
+          id="core"
+          value="core"
+          class="bodyPart"
+        />Core<br />
+        <input
+          name="part"
+          type="radio"
+          id="upperBody"
+          value="upperBody"
+          class="bodyPart"
+        />Upper Body<br />
 
         <button class="showMeBTN">Show me the Workout!</button>
       </div>
-      <section id="firstSection">
-
-      </section>
+      <section id="firstSection"></section>
     </div>
-    <section id="secondSection">
-    </section>
+    <section></section>
 
-
-    <footer class="mt-6 mb-2 p-4 bg-slate-600 border border-yellow-400 flex justify-between items-center text-xs">
+    <footer
+      class="mt-6 mb-2 p-4 bg-slate-600 border border-yellow-400 flex justify-between items-center text-xs"
+    >
       &COPY; 2023
-
     </footer>
 
     <script
@@ -159,5 +182,4 @@
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/navbar.js"></script>
   </body>
-
 </html>
