@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">  ​
+<html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,32 +11,18 @@
   </head>
 
   <body class="mx-20 bg-blue-500 text-yellow-400">
-    <header
-      class="px-5 py-4 bg-slate-600 border border-yellow-400 flex justify-between items-center"
-    >
+    <header class="px-5 py-4 bg-slate-600 border border-yellow-400 flex justify-between items-center">
       <img src="" alt="logo" class="logo" />
       <nav>
         <ul class="text-right inline-flex space-x-3">
           <li>
-            <a
-              href="#workout"
-              class="py-1 px-2 border border-yellow-400 rounded shadow"
-              >Workout</a
-            >
+            <a href="#workout" class="py-1 px-2 border border-yellow-400 rounded shadow">Workout</a>
           </li>
           <li>
-            <a
-              href="#schedule"
-              class="py-1 px-2 border border-yellow-400 rounded shadow"
-              >Schedule</a
-            >
+            <a href="#schedule" class="py-1 px-2 border border-yellow-400 rounded shadow">Schedule</a>
           </li>
           <li>
-            <a
-              href="#about"
-              class="py-1 px-2 border border-yellow-400 rounded shadow"
-              >About</a
-            >
+            <a href="#about" class="py-1 px-2 border border-yellow-400 rounded shadow">About</a>
           </li>
         </ul>
       </nav>
@@ -43,14 +30,10 @@
     <section>
       <h1 class="font-bold text-2xl">Workout Planner</h1>
       <div>
-        <h1
-          class="mb-4 font-semibold leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
-        >
+        <h1 class="mb-4 font-semibold leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
           Quote of the day!
         </h1>
-        <p
-          class="mb-8 text-lg font-normal lg:text-xl sm:px-16 xl:px-48 italic quotes"
-        ></p>
+        <p class="mb-8 text-lg font-normal lg:text-xl sm:px-16 xl:px-48 italic quotes"></p>
       </div>
     </section>
     <main></main>
@@ -88,6 +71,11 @@
         </thead>
       </table>
     </div>
+
+
+    </div>
+
+
     <div class="container">
       <!--Name of exercise + difficulty-->
     </div>
@@ -97,42 +85,6 @@
       <!--Exercise instructions-->
     </div>
 
-=======
-​
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Workout Planner</title>
-  <link rel="stylesheet" href="./css/stylesheet.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-​
-​
-<body class= "mx-20 bg-blue-500 text-yellow-400">
-  <header class="py-3 bg-slate-600 border border-yellow-400">
-    <img src="/Users/pabloestrada/Downloads/Workout.png" alt="logo" class="logo">
-    <h1 class="font-bold text-2xl">Welcome to The Workout Planner!</h1>
-    <nav>
-      <ul class="text-right">
-        <li><a href="#workout">Workout</a></li>
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-  ​<section>
-    <div> 
-      <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-        Quote of the Day!
-      </h1>
-    </div>
-  </section>
-  <main class="stuff"></main>
-​
-  <div class="container">
-
     <table>
       <ul>
         <li id="date">Date</li>
@@ -140,31 +92,36 @@
         <li id="Instructions">Instructions</li>
       </ul>
     </table>
+    <button id="getStartedBTN">Get Started</button>
 
-    <table>
-      <thead>
-        <trow>
-          <th colspan="3">
-            <h4>Recorded Workouts</h4>
-            <th><h5>Date</h5></th>
-            <th><h5>Workout</h5></th>
-            <th><h5>Instructions</h5></th>
-          </th>
-        </trow>
-      </thead>
-    </table>
 
-   <table>
-    <ul>
-      <li id="date"> Date </li>
-      <li id="workout-type"> Workout Type </li>
-      <li id="Instructions"> Instructions </li>
-    </ul>
-   </table>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span id="closeX" style="float: right  ; cursor:pointer">&times;</span>
+        <p>Choose a body section:</p>
+
+
+        <input name="part" type="radio" id="lowerBody" value="lowerBody" class="bodyPart">Lower
+        Body<br>
+        <input name="part" type="radio" id="core" value="core" class="bodyPart">Core<br>
+        <input name="part" type="radio" id="upperBody" value="upperBody" class="bodyPart">Upper
+        Body<br>
+
+        <button class="showMeBTN">Show me the Workout!</button>
+      </div>
+      <section id="firstSection">
+
+      </section>
+    </div>
+    <section id="secondSection">
+    </section>
+
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="./assets/js/quotes.js"></script>
-    <script src="./js/script.js"></script>
-</body>
-​
+    <script src="./assets/js/exercise.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+
 </html>
