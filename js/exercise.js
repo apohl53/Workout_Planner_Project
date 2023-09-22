@@ -7,12 +7,6 @@
 // var userChoice = 
 
 
-
-
-
-
-
-
 var userChoice = null;
 
 // var storedUserChoice = localStorage.getItem('userChoice');
