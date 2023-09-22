@@ -28,3 +28,7 @@ body button {
   border-radius: 20px;
   font-size: 50px;
 }
+
+.test {
+  background-color: gray;
+}
