@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  ​
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,6 +11,7 @@
   </head>
 
   <body class="mx-20 bg-blue-500 text-yellow-400">
+<<<<<<< HEAD
     <header class="px-2 py-1 bg-slate-600 border border-yellow-400 flex justify-between items-center">
       <img src="./assets/images/Workout-2.png" alt="logo" class="logo object-contain h-16 w-16" />
       <nav class="text-sm px-4">
@@ -35,6 +36,20 @@
               class="py-.5 px-2 border border-yellow-400 rounded shadow hover:bg-yellow-400 hover:text-black"
               >About</a
             >
+=======
+    <header class="px-5 py-4 bg-slate-600 border border-yellow-400 flex justify-between items-center">
+      <img src="" alt="logo" class="logo" />
+      <nav>
+        <ul class="text-right inline-flex space-x-3">
+          <li>
+            <a href="#workout" class="py-1 px-2 border border-yellow-400 rounded shadow">Workout</a>
+          </li>
+          <li>
+            <a href="#schedule" class="py-1 px-2 border border-yellow-400 rounded shadow">Schedule</a>
+          </li>
+          <li>
+            <a href="#about" class="py-1 px-2 border border-yellow-400 rounded shadow">About</a>
+>>>>>>> 8da2f7aca2da6f138245ccaaea34527229596d87
           </li>
         </ul>
 
@@ -57,14 +72,10 @@
     <section>
       <h1 class="font-bold text-2xl">Workout Planner</h1>
       <div>
-        <h1
-          class="mb-4 font-semibold leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
-        >
+        <h1 class="mb-4 font-semibold leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
           Quote of the day!
         </h1>
-        <p
-          class="mb-8 text-lg font-normal lg:text-xl sm:px-16 xl:px-48 italic quotes"
-        ></p>
+        <p class="mb-8 text-lg font-normal lg:text-xl sm:px-16 xl:px-48 italic quotes"></p>
       </div>
     </section>
     <main></main>
@@ -102,6 +113,33 @@
         </thead>
       </table>
     </div>
+
+    <button id="getStartedBTN">Get Started</button>
+
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span id="closeX" style="float: right  ; cursor:pointer">&times;</span>
+        <p>Choose a body section:</p>
+
+
+        <input name="part" type="radio" id="lowerBody" value="lowerBody" class="bodyPart">Lower
+        Body<br>
+        <input name="part" type="radio" id="core" value="core" class="bodyPart">Core<br>
+        <input name="part" type="radio" id="upperBody" value="upperBody" class="bodyPart">Upper
+        Body<br>
+
+        <button class="showMeBTN">Show me the Workout!</button>
+      </div>
+    </div>
+
+    <section id="firstSection">
+
+    </section>
+    <section id="secondSection">
+
+    </section>
+
     <div class="container">
       <!--Name of exercise + difficulty-->
     </div>
@@ -119,6 +157,7 @@
       </ul>
     </table>
 
+<<<<<<< HEAD
     <footer class="mt-6 mb-2 p-4 bg-slate-600 border border-yellow-400 flex justify-between items-center text-xs">
       &COPY; 2023
 
@@ -129,8 +168,14 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+=======
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+>>>>>>> 8da2f7aca2da6f138245ccaaea34527229596d87
     <script src="./assets/js/quotes.js"></script>
+    <script src="./js/exercise.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/navbar.js"></script>
   </body>
+
 </html>
