@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Workout Planner</title>
-    <link rel="stylesheet" href="./assets/" />
+    <link rel="stylesheet" href="./assets/css/stylesheet.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
@@ -72,31 +72,9 @@
       </table>
     </div>
 
-    <button id="getStartedBTN">Get Started</button>
 
-
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span id="closeX" style="float: right  ; cursor:pointer">&times;</span>
-        <p>Choose a body section:</p>
-
-
-        <input name="part" type="radio" id="lowerBody" value="lowerBody" class="bodyPart">Lower
-        Body<br>
-        <input name="part" type="radio" id="core" value="core" class="bodyPart">Core<br>
-        <input name="part" type="radio" id="upperBody" value="upperBody" class="bodyPart">Upper
-        Body<br>
-
-        <button class="showMeBTN">Show me the Workout!</button>
-      </div>
     </div>
 
-    <section id="firstSection">
-
-    </section>
-    <section id="secondSection">
-
-    </section>
 
     <div class="container">
       <!--Name of exercise + difficulty-->
@@ -114,11 +92,35 @@
         <li id="Instructions">Instructions</li>
       </ul>
     </table>
+    <button id="getStartedBTN">Get Started</button>
+
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span id="closeX" style="float: right  ; cursor:pointer">&times;</span>
+        <p>Choose a body section:</p>
+
+
+        <input name="part" type="radio" id="lowerBody" value="lowerBody" class="bodyPart">Lower
+        Body<br>
+        <input name="part" type="radio" id="core" value="core" class="bodyPart">Core<br>
+        <input name="part" type="radio" id="upperBody" value="upperBody" class="bodyPart">Upper
+        Body<br>
+
+        <button class="showMeBTN">Show me the Workout!</button>
+      </div>
+      <section id="firstSection">
+
+      </section>
+    </div>
+    <section id="secondSection">
+    </section>
+
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="./assets/js/quotes.js"></script>
-    <script src="./js/exercise.js"></script>
+    <script src="./assets/js/exercise.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 
