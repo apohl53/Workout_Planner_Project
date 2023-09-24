@@ -1,17 +1,8 @@
-// var promisedAPI = fetch('https://api-ninjas.com/v1/exercises?muscle=&apikey=').then(function (data) {
-//   var resultQuote = data.json();
-//   console.log(resultQuote);
-// })
-
-
-// var userChoice = 
-
-
 var userChoice = null;
 var upper = $('.upperBody')
 var lower = $('.lowerBody')
 var core = $('.core')
-// var storedUserChoice = localStorage.getItem('userChoice');
+
 
 function openModal() {
   var modal = document.getElementById('myModal');
@@ -120,32 +111,37 @@ function getStorage() {
 
 
 function getObject() {
-  // var obj = JSON.parse(localStorage.getItem('object')) || [];
-  // var obj3 = JSON.parse(localStorage.getItem('UpperBody')) || [];
+
   var obj3 = JSON.parse(localStorage.getItem('UpperBody')) || [];
   var obj2 = JSON.parse(localStorage.getItem('LowerBody')) || [];
   var obj4 = JSON.parse(localStorage.getItem('Core')) || [];
-  // console.log(obj.upperBody)
-  console.log(obj3)
-  console.log(obj2)
-  console.log(obj4)
+
+  //  this sets tags and get upperbody workouts
   for (var x = 0; x < obj3.length; x++) {
-    upper.append('<p>' + obj3[x] + '</p>')
+    upper.append('<p id = "upperp' + x + '">' + obj3[x] + '</p>')
   }
+
+  // for lower body
   for (var x = 0; x < obj2.length; x++) {
-    lower.append('<p>' + obj2[x] + '</p>')
+    lower.append('<p id = "lowerp' + x + '">' + obj2[x] + '</p>')
   }
+
+  // for core
   for (var x = 0; x < obj4.length; x++) {
-    core.append('<p>' + obj4[x] + '</p>')
+    core.append('<p id = "corep' + x + '">' + obj4[x] + '</p>')
   }
 
 
 }
 
+
+// after user click previous exercise, this will find the text and id and pass it on to new api call to get all the info from the exercise
 function gtfnction(e) {
   var txt = $(e.target).text();
-  console.log(txt)
-  nwapicall(txt)
+
+  var trgt = '#' + e.target.id
+
+  nwapicall(txt, trgt)
 }
 
 
@@ -199,8 +195,8 @@ function apiCall(getLocal) {
     }
   });
 }
-function nwapicall(txt) {
-
+function nwapicall(txt, strtrgt) {
+  var strtrgt = $(strtrgt)
   $.ajax({
     method: 'GET',
     url: 'https://api.api-ninjas.com/v1/exercises?name=' + txt,
@@ -210,13 +206,12 @@ function nwapicall(txt) {
 
 
       secondSection.innerHTML = "";
-      test.append('<p class = "testing">' + result.name +
-        '<br>' + result.type +
-        '<br>' + result.muscle +
-        '<br>' + result.equipment +
-        '<br>' + result.difficulty + '</p>')
+      strtrgt.append('<p class = "testing">' + result[0].type +
+        '<br>' + result[0].muscle +
+        '<br>' + result[0].equipment +
+        '<br>' + result[0].difficulty + '</p>')
       var tweb = $('.testing');
-      tweb.append('<p>' + result.instructions + '</p>')
+      strtrgt.append('<p>' + result[0].instructions + '</p>')
 
     }
   })
@@ -224,7 +219,7 @@ function nwapicall(txt) {
 
 
 
-
+// once the page loads, logic starts here
 getObject();
 
 var getStartedBTN = document.getElementById('getStartedBTN');
