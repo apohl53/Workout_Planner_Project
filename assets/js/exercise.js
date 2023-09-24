@@ -1,15 +1,8 @@
-// var promisedAPI = fetch('https://api-ninjas.com/v1/exercises?muscle=&apikey=').then(function (data) {
-//   var resultQuote = data.json();
-//   console.log(resultQuote);
-// })
-
-
-// var userChoice = 
-
-
 var userChoice = null;
+var upper = $('.upperBody')
+var lower = $('.lowerBody')
+var core = $('.core')
 
-// var storedUserChoice = localStorage.getItem('userChoice');
 
 function openModal() {
   var modal = document.getElementById('myModal');
@@ -117,18 +110,39 @@ function getStorage() {
 }
 
 
-function getData() {
-  return localStorage.getItem('userChoice') || [];
-}
-
-
 function getObject() {
-  var obj = JSON.parse(localStorage.getItem('object')) || [];
-  console.log(obj)
+
+  var obj3 = JSON.parse(localStorage.getItem('UpperBody')) || [];
+  var obj2 = JSON.parse(localStorage.getItem('LowerBody')) || [];
+  var obj4 = JSON.parse(localStorage.getItem('Core')) || [];
+
+  //  this sets tags and get upperbody workouts
+  for (var x = 0; x < obj3.length; x++) {
+    upper.append('<p id = "upperp' + x + '">' + obj3[x] + '</p>')
+  }
+
+  // for lower body
+  for (var x = 0; x < obj2.length; x++) {
+    lower.append('<p id = "lowerp' + x + '">' + obj2[x] + '</p>')
+  }
+
+  // for core
+  for (var x = 0; x < obj4.length; x++) {
+    core.append('<p id = "corep' + x + '">' + obj4[x] + '</p>')
+  }
+
 
 }
 
 
+// after user click previous exercise, this will find the text and id and pass it on to new api call to get all the info from the exercise
+function gtfnction(e) {
+  var txt = $(e.target).text();
+
+  var trgt = '#' + e.target.id
+
+  nwapicall(txt, trgt)
+}
 
 
 
@@ -146,7 +160,8 @@ function apiCall(getLocal) {
       var count = Math.floor(Math.random() * 10);
       secondSection.innerHTML = "";
       test.append('<p class = "testing">' + result[count].name +
-        '<br>' + result[count].type + '<br>' + result[count].muscle +
+        '<br>' + result[count].type +
+        '<br>' + result[count].muscle +
         '<br>' + result[count].equipment +
         '<br>' + result[count].difficulty + '</p>')
       if (muscle == 'abductors' || muscle == 'adductors' || muscle == 'calves' || muscle == 'glutes' || muscle == 'hamstrings' || muscle == 'quadriceps') {
@@ -158,7 +173,7 @@ function apiCall(getLocal) {
       }
       else if (muscle == 'biceps' || muscle == 'chest' || muscle == 'forearms' || muscle == 'lats' || muscle == 'lower_back' || muscle == 'middle_back' || muscle == 'neck' || muscle == 'traps' || muscle == 'triceps') {
         userExercises.prevUpper.push(result[count].name);
-        localStorage.setItem('Upperbody', JSON.stringify(userExercises.prevUpper));
+        localStorage.setItem('UpperBody', JSON.stringify(userExercises.prevUpper));
 
 
       }
@@ -180,11 +195,31 @@ function apiCall(getLocal) {
     }
   });
 }
+function nwapicall(txt, strtrgt) {
+  var strtrgt = $(strtrgt)
+  $.ajax({
+    method: 'GET',
+    url: 'https://api.api-ninjas.com/v1/exercises?name=' + txt,
+    headers: { 'X-Api-Key': 'Hq8NzbFCpDxaeVKmzTs+MQ==nRvwP2tuQHCEWYUO' },
+    contentType: 'application/json',
+    success: function (result) {
+
+
+      secondSection.innerHTML = "";
+      strtrgt.append('<p class = "testing">' + result[0].type +
+        '<br>' + result[0].muscle +
+        '<br>' + result[0].equipment +
+        '<br>' + result[0].difficulty + '</p>')
+      var tweb = $('.testing');
+      strtrgt.append('<p>' + result[0].instructions + '</p>')
+
+    }
+  })
+}
 
 
 
-
-
+// once the page loads, logic starts here
 getObject();
 
 var getStartedBTN = document.getElementById('getStartedBTN');
@@ -193,6 +228,9 @@ getStartedBTN.addEventListener('click', openModal);
 var closeGetStarted = document.getElementById('closeX')
 closeGetStarted.addEventListener('click', closeModal);
 
+upper.on('click', gtfnction)
+core.on('click', gtfnction)
+lower.on('click', gtfnction)
 
 
 
