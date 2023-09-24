@@ -1,6 +1,7 @@
 var quote = $(".quotes");
 var muscle = "triceps";
 var category = "fitness";
+
 $.ajax({
   method: "GET",
   url: "https://api.api-ninjas.com/v1/quotes?category=" + category,
