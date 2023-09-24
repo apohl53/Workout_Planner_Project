@@ -8,7 +8,9 @@
 
 
 var userChoice = null;
-
+var upper = $('.upperBody')
+var lower = $('.lowerBody')
+var core = $('.core')
 // var storedUserChoice = localStorage.getItem('userChoice');
 
 function openModal() {
@@ -117,18 +119,34 @@ function getStorage() {
 }
 
 
-function getData() {
-  return localStorage.getItem('userChoice') || [];
-}
-
-
 function getObject() {
-  var obj = JSON.parse(localStorage.getItem('object')) || [];
-  console.log(obj)
+  // var obj = JSON.parse(localStorage.getItem('object')) || [];
+  // var obj3 = JSON.parse(localStorage.getItem('UpperBody')) || [];
+  var obj3 = JSON.parse(localStorage.getItem('UpperBody')) || [];
+  var obj2 = JSON.parse(localStorage.getItem('LowerBody')) || [];
+  var obj4 = JSON.parse(localStorage.getItem('Core')) || [];
+  // console.log(obj.upperBody)
+  console.log(obj3)
+  console.log(obj2)
+  console.log(obj4)
+  for (var x = 0; x < obj3.length; x++) {
+    upper.append('<p>' + obj3[x] + '</p>')
+  }
+  for (var x = 0; x < obj2.length; x++) {
+    lower.append('<p>' + obj2[x] + '</p>')
+  }
+  for (var x = 0; x < obj4.length; x++) {
+    core.append('<p>' + obj4[x] + '</p>')
+  }
+
 
 }
 
-
+function gtfnction(e) {
+  var txt = $(e.target).text();
+  console.log(txt)
+  nwapicall(txt)
+}
 
 
 
@@ -146,7 +164,8 @@ function apiCall(getLocal) {
       var count = Math.floor(Math.random() * 10);
       secondSection.innerHTML = "";
       test.append('<p class = "testing">' + result[count].name +
-        '<br>' + result[count].type + '<br>' + result[count].muscle +
+        '<br>' + result[count].type +
+        '<br>' + result[count].muscle +
         '<br>' + result[count].equipment +
         '<br>' + result[count].difficulty + '</p>')
       if (muscle == 'abductors' || muscle == 'adductors' || muscle == 'calves' || muscle == 'glutes' || muscle == 'hamstrings' || muscle == 'quadriceps') {
@@ -158,7 +177,7 @@ function apiCall(getLocal) {
       }
       else if (muscle == 'biceps' || muscle == 'chest' || muscle == 'forearms' || muscle == 'lats' || muscle == 'lower_back' || muscle == 'middle_back' || muscle == 'neck' || muscle == 'traps' || muscle == 'triceps') {
         userExercises.prevUpper.push(result[count].name);
-        localStorage.setItem('Upperbody', JSON.stringify(userExercises.prevUpper));
+        localStorage.setItem('UpperBody', JSON.stringify(userExercises.prevUpper));
 
 
       }
@@ -180,7 +199,28 @@ function apiCall(getLocal) {
     }
   });
 }
+function nwapicall(txt) {
 
+  $.ajax({
+    method: 'GET',
+    url: 'https://api.api-ninjas.com/v1/exercises?name=' + txt,
+    headers: { 'X-Api-Key': 'Hq8NzbFCpDxaeVKmzTs+MQ==nRvwP2tuQHCEWYUO' },
+    contentType: 'application/json',
+    success: function (result) {
+
+
+      secondSection.innerHTML = "";
+      test.append('<p class = "testing">' + result.name +
+        '<br>' + result.type +
+        '<br>' + result.muscle +
+        '<br>' + result.equipment +
+        '<br>' + result.difficulty + '</p>')
+      var tweb = $('.testing');
+      tweb.append('<p>' + result.instructions + '</p>')
+
+    }
+  })
+}
 
 
 
@@ -193,6 +233,9 @@ getStartedBTN.addEventListener('click', openModal);
 var closeGetStarted = document.getElementById('closeX')
 closeGetStarted.addEventListener('click', closeModal);
 
+upper.on('click', gtfnction)
+core.on('click', gtfnction)
+lower.on('click', gtfnction)
 
 
 
