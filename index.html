@@ -11,30 +11,55 @@
 
   <body class="mx-20 bg-blue-500 text-yellow-400">
     <!-- nav bar -->
-    <header class="px-2 py-1 bg-slate-600 border border-yellow-400 flex justify-between items-center">
-      <img src="./assets/images/Workout-2.png" alt="logo" class="logo object-contain h-16 w-16" />
+    <header
+      class="px-2 py-1 bg-slate-600 border border-yellow-400 flex justify-between items-center"
+    >
+      <img
+        src="./assets/images/Workout-2.png"
+        alt="logo"
+        class="logo object-contain h-16 w-16"
+      />
       <nav class="text-sm px-4">
         <ul class="text-right space-x-3 hidden md:flex">
           <li>
-            <a href="#workout"
-              class="py-.5 px-2 border border-yellow-400 rounded shadow hover:bg-yellow-400 hover:text-black">Workout</a>
+            <a
+              href="#workout"
+              class="py-.5 px-2 border border-yellow-400 rounded shadow hover:bg-yellow-400 hover:text-black"
+              >Workout</a
+            >
           </li>
           <li>
-            <a href="#schedule"
-              class="py-.5 px-2 border border-yellow-400 rounded shadow hover:bg-yellow-400 hover:text-black">Schedule</a>
+            <a
+              href="#schedule"
+              class="py-.5 px-2 border border-yellow-400 rounded shadow hover:bg-yellow-400 hover:text-black"
+              >Schedule</a
+            >
           </li>
           <li>
-            <a href="./about-page.html"
-              class="py-.5 px-2 border border-yellow-400 rounded shadow hover:bg-yellow-400 hover:text-black">About</a>
+            <a
+              href="./about-page.html"
+              class="py-.5 px-2 border border-yellow-400 rounded shadow hover:bg-yellow-400 hover:text-black"
+              >About</a
+            >
           </li>
         </ul>
 
         <!-- mobile menu -->
         <div class="md:hidden flex">
           <button class="mobile-menu-button">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
             </svg>
           </button>
         </div>
@@ -54,17 +79,21 @@
         >
           Quote of the day!
         </h1>
-        <p class="text-yellow-300 italic font-light text-2xl mb-8 sm:px-16 xl:px-48 quotes border border-yellow-400 py-3 bg-cover"
+        <p
+          class="text-yellow-300 italic font-light text-2xl mb-8 sm:px-16 xl:px-48 quotes border border-yellow-400 py-3 bg-cover"
           style="
             text-shadow: 1px 0 0 black, 0 -1px 0 black, 0 1px 0 black,
               -1px 0 0 black;
             background-image: url('./assets/images/karsten-winegeart-0Wra5YYVQJE-unsplash-grayscale.jpg');
-          "></p>
+          "
+        ></p>
       </div>
     </section>
     <main></main>
 
-    <div class="container p-5 flex-col bg-slate-600 border border-yellow-400 py-4 justify-center">
+    <div
+      class="container p-5 flex-col bg-slate-600 border border-yellow-400 py-4 justify-center"
+    >
       <div class="flex justify-center">
         <button id="getStartedBTN" class="ml-4 py-.5 px-2 border">
           Get Workout!
@@ -78,30 +107,29 @@
 
     <br />
 
-    <div class="container flex bg-slate-600 border border-yellow-400">
+    <div
+      class="flex justify-center items-center bg-slate-600 border border-yellow-400"
+    >
       <table>
-        <thead>
+        <thead class="content-center">
           <trow>
             <th colspan="2">
               <tr>
-
                 <td>
-                  <h3>Previous Upper body</h3>
-                  <p class="upperBody"></p>
-                </td>
-              </tr>
-              <tr>
-
-                <td>
-                  <h3>Previous Core</h3>
-                  <p class="core"></p>
+                  <h3 class="underline text-xl">Previous Upper body</h3>
+                  <p class="upperBody hover:cursor-pointer"></p>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <h3>Previous Lower Body</h3>
-
-                  <p class="lowerBody"></p>
+                  <h3 class="underline text-xl">Previous Core</h3>
+                  <p class="core hover:cursor-pointer"></p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h3 class="underline text-xl">Previous Lower Body</h3>
+                  <p class="lowerBody hover:cursor-pointer"></p>
                 </td>
               </tr>
             </th>
@@ -112,14 +140,31 @@
 
     <div id="myModal" class="modal">
       <div class="modal-content">
-
-        <span id="closeX" style="float: right  ; cursor:pointer">&times;</span>
+        <span id="closeX" style="float: right; cursor: pointer">&times;</span>
         <span id="errorMessage"></span>
         <p>Choose a body section:</p>
 
-        <input name="part" type="radio" id="lowerBody" value="lowerBody" class="bodyPart" />Lower Body<br />
-        <input name="part" type="radio" id="core" value="core" class="bodyPart" />Core<br />
-        <input name="part" type="radio" id="upperBody" value="upperBody" class="bodyPart" />Upper Body<br />
+        <input
+          name="part"
+          type="radio"
+          id="upperBody"
+          value="upperBody"
+          class="bodyPart"
+        />Upper Body<br />
+        <input
+          name="part"
+          type="radio"
+          id="core"
+          value="core"
+          class="bodyPart"
+        />Core<br />
+        <input
+          name="part"
+          type="radio"
+          id="lowerBody"
+          value="lowerBody"
+          class="bodyPart"
+        />Lower Body<br />
 
         <button class="showMeBTN">Show me the Workout!</button>
       </div>
@@ -127,17 +172,17 @@
     </div>
     <section></section>
 
-    <footer class="mt-6 mb-2 p-4 bg-slate-600 border border-yellow-400 flex justify-between items-center text-xs">
+    <footer
+      class="mt-6 mb-2 p-4 bg-slate-600 border border-yellow-400 flex justify-between items-center text-xs"
+    >
       &COPY; 2023
     </footer>
-
-
 
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
-   ></script>
+    ></script>
 
     <script src="./assets/js/quotes.js"></script>
     <script src="./assets/js/exercise.js"></script>
