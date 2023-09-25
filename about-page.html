@@ -9,7 +9,56 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
+  
   <body class="mx-20 py-8 bg-blue-500 text-yellow-400">
+
+    <header
+        class="mb-4 px-2 py-1 bg-slate-600 border border-yellow-400 flex justify-between items-center"
+      >
+        <img
+          src="./assets/images/Workout-2.png"
+          alt="logo"
+          class="logo object-contain h-16 w-16"
+        />
+        <nav class="text-sm px-4">
+          <ul class="text-right space-x-3 hidden md:flex">
+            <li>
+              <a
+                href="./index.html"
+                class="py-.5 px-2 border border-yellow-400 rounded shadow hover:bg-yellow-400 hover:text-black"
+                >Home</a
+              >
+            </li>
+          </ul>
+  
+          <!-- mobile menu -->
+          <div class="md:hidden flex">
+            <button class="mobile-menu-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </button>
+          </div>
+  
+          <div class="hidden mobile-menu">
+            <a href="" class="block py-2 px-4 text-xs">Workout</a>
+            <a href="" class="block py-2 px-4 text-xs">Schedule</a>
+            <a href="" class="block py-2 px-4 text-xs">About</a>
+          </div>
+        </nav>
+      </header>
+
     <div class=" bg-slate-600 border border-yellow-400">
       <h1 class='text-xl text-center mx-5 px-4 py-4'><strong>Why us?</strong></h1>
     
@@ -35,6 +84,13 @@
         <li>Michael Klein</li>
         <li>Rodolfo Espinosa-Nunez</li>
     </div>
+
+    <footer
+    class="mt-6 mb-2 p-4 bg-slate-600 border border-yellow-400 flex justify-between items-center text-xs"
+  >
+    &COPY; 2023
+  </footer>
+
   </body>
 
 </html>
