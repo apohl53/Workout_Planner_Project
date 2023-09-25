@@ -12,10 +12,12 @@ to insall this project, clone the repository from github and open index.html in 
 
 https://apohl53.github.io/Workout_Planner_Project/
 
+https://github.com/apohl53/Workout_Planner_Project
+
 # Credits
 
-Logo from https://www.canva.com/
+Logo: https://www.canva.com/
 https://heroicons.com/
-https://unsplash.com/photos/0Wra5YYVQJE
+Hero banner photo: https://unsplash.com/photos/0Wra5YYVQJE
 
-Licence - MIT
+License - MIT
