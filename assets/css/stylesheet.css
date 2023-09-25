@@ -14,17 +14,33 @@
 
 /* Modal content */
 .modal-content {
-  background-color: #fefefe;
+  background-color: rgb(71, 85, 105);
   margin: 5% auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid rgb(250, 204, 21);
   width: 80%;
 }
 
-/* body button {
-  padding: 50px;
-  background-color: rgb(64, 8, 177);
-  color: white;
-  border-radius: 20px;
-  font-size: 50px;
-} */
+.showMeBTN {
+  background-color: rgb(71, 85, 105);
+  border: none;
+  color: rgb(250, 204, 21);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  border: 1px solid rgb(250, 204, 21);
+}
+
+body button {
+  border: 1px solid rgb(250, 204, 21);
+  border-radius: 4px;
+}
+
+body button:hover {
+  background-color: rgb(250, 204, 21);
+  color: black;
+  border-radius: 4px;
+}
