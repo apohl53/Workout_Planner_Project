@@ -1,7 +1,22 @@
 var userChoice = null;
-var upper = $('.upperBody')
-var lower = $('.lowerBody')
-var core = $('.core')
+var upper = $('.upperBody');
+var lower = $('.lowerBody');
+var core = $('.core');
+
+var exerciseOptions = [
+  {
+    bodySection: 'lowerBody',
+    bodyParts: ['abductors', 'adductors', 'calves', 'glutes', 'hamstrings', 'quadriceps']
+  },
+  {
+    bodySection: 'core',
+    bodyParts: ['abdominals']
+  },
+  {
+    bodySection: 'upperBody',
+    bodyParts: ['biceps', 'chest', 'forearms', 'lats', 'lower_back', 'middle_back', 'neck', 'traps', 'triceps']
+  }
+]
 
 
 function openModal() {
@@ -22,9 +37,9 @@ function radioButton() {
 
 
   if (val === "lowerBody") {
-    var randLower = Math.floor(Math.random() * (lowerBodyLength - 1) + 1);
-    var lowerString = exerciseOptions[0].bodyParts[randLower];
-    localStorage.setItem('userChoice', lowerString);
+    var randLower = Math.floor(Math.random() * (lowerBodyLength - 1) + 1); // if lowerbody is chosen, get a random number based on length  
+    var lowerString = exerciseOptions[0].bodyParts[randLower]; // choose a random body part using number above index
+    localStorage.setItem('userChoice', lowerString); // this will set the users choice to local storage using 'userChoice' as key
 
     getStorage();
     closeModal();
@@ -60,20 +75,7 @@ var btn = $('.showMeBTN')
 btn.on('click', radioButton)
 
 
-var exerciseOptions = [
-  {
-    bodySection: 'lowerBody',
-    bodyParts: ['abductors', 'adductors', 'calves', 'glutes', 'hamstrings', 'quadriceps']
-  },
-  {
-    bodySection: 'core',
-    bodyParts: ['abdominals']
-  },
-  {
-    bodySection: 'upperBody',
-    bodyParts: ['biceps', 'chest', 'forearms', 'lats', 'lower_back', 'middle_back', 'neck', 'traps', 'triceps']
-  }
-]
+
 
 var userExercises =
 {
@@ -102,6 +104,8 @@ var upperString = exerciseOptions[2].bodyParts[randUpper];
 var test = $('#secondSection')
 var test2 = $('#firstSection')
 
+
+// get the Storage saved in userChoice
 function getStorage() {
   var getLocal = localStorage.getItem('userChoice')
 
@@ -137,17 +141,16 @@ function getObject() {
 
 // after user click previous exercise, this will find the text and id and pass it on to new api call to get all the info from the exercise
 function gtfnction(e) {
-  var txt = $(e.target).text();
+  var txt = $(e.target).text(); // this pull out the text that was clicked on to be able to use in the apiCall
 
-  var trgt = '#' + e.target.id
+  var trgt = '#' + e.target.id // this will grab the necessary ID to be able to append later into the page
 
-  nwapicall(txt, trgt)
+  nwapicall(txt, trgt) //this will call the nwapiCall and use 'txt' and 'trgt' that was collected from the click event
 }
 
 
-
+// based on users choice, call the API and Append to page to view the workout
 function apiCall(getLocal) {
-  // below is the API connection
   var muscle = getLocal;
   nxtcount += 1;
   $.ajax({
@@ -157,13 +160,17 @@ function apiCall(getLocal) {
     contentType: 'application/json',
     success: function (result) {
 
-      var count = Math.floor(Math.random() * 10);
-      secondSection.innerHTML = "";
+      var count = Math.floor(Math.random() * 10); // picks one workout from the 10 the API spits out
+      secondSection.innerHTML = ""; // clear what is currently viewing
+
+      // append the data coming from the API
       test.append('<p class = "testing">' + result[count].name +
         '<br>' + result[count].type +
         '<br>' + result[count].muscle +
         '<br>' + result[count].equipment +
         '<br>' + result[count].difficulty + '</p>')
+
+      // below if statements will add the data that was received from API to localStorage to be able to view last workout later when we call it
       if (muscle == 'abductors' || muscle == 'adductors' || muscle == 'calves' || muscle == 'glutes' || muscle == 'hamstrings' || muscle == 'quadriceps') {
 
         userExercises.prevLower.push(result[count].name);
@@ -195,6 +202,8 @@ function apiCall(getLocal) {
     }
   });
 }
+
+// this api call is to get the data that was clicked on the page (that is under a previous title holder)
 function nwapicall(txt, strtrgt) {
   var strtrgt = $(strtrgt)
   $.ajax({
@@ -222,11 +231,17 @@ function nwapicall(txt, strtrgt) {
 // once the page loads, logic starts here
 getObject();
 
+
+// event listener inside Modal
 var getStartedBTN = document.getElementById('getStartedBTN');
 getStartedBTN.addEventListener('click', openModal);
 
+
+// option to close out the modal page
 var closeGetStarted = document.getElementById('closeX')
 closeGetStarted.addEventListener('click', closeModal);
+
+
 
 upper.on('click', gtfnction)
 core.on('click', gtfnction)
